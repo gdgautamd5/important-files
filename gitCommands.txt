@@ -1,0 +1,66 @@
+
+We will use gdgautamd27@users.noreply.github.com when performing git operations and sending outgoing email on your behalf. 
+------------------------------------------------------------------------------------------------------------
+
+
+gautamdas@gautamdas:~$ git config --global user.name "Gautam Das"
+gautamdas@gautamdas:~$ git config --global user.email gdgautamd27@gmail.com
+gautamdas@gautamdas:~$ git config --list
+This below command show you which username and email set for this repository.
+
+    git config --get user.name
+
+    git config --get user.email
+
+
+----------------------------------------------------------------------------
+to create a branch use
+"git branch branch_name" 
+ 
+to push branch to remote named origin use
+"git push origin branch_name"
+
+to switch between branches use
+"git checkout branch_name" 
+
+to delete a branch use
+"git branch -d branch_name"
+
+
+-----------------------------------------------------------------------------
+
+ The files listed in the Staging Area, and they are not in our repository yet. We could add or remove files from the stage before we store them in the repository.
+
+To store our staged changes we run the commit command with a message describing what we've changed. Let's do that now by typing:
+
+
+-------------------------------------------------------------------------------
+important difference between pull and (fetch & merge)
+pull->it fetches all data and merge it but no info about wt are the changes
+
+so use fetch and merge if u want to see the change in data and then merge
+
+
+------------------------------------------------------------------------------
+
+Let's take a look at what is different from our last commit by using the git diff command.
+
+In this case we want the diff of our most recent commit, which we can refer to using the HEAD pointer.
+
+git diff HEAD
+
+------------------------------------------------------------------------------
+
+You can unstage files by using the git reset command. Go ahead and remove octofamily/octodog.txt.
+
+git reset octofamily/octodog.txt
+
+-----------------------------------------------------------------------------
+1.17 Undo
+
+git reset did a great job of unstaging octodog.txt, but you'll notice that he's still there. He's just not staged anymore. It would be great if we could go back to how things were before octodog came around and ruined the party.
+
+Files can be changed back to how they were at the last commit by using the command: git checkout -- <target>. Go ahead and get rid of all the changes since the last commit for octocat.txt
+
+git checkout -- octocat.txt
+-------------------------------------------------------------------------------
