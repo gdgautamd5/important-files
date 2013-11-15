@@ -1,0 +1,6 @@
+Task4
+-------------------------------------------------------
+
+create a view slide show of images
+create a slide show using jcarousel
+create a slide show using nivo slider
