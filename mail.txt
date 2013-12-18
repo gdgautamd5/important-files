@@ -1,0 +1,11 @@
+his error is due the fact that your mail service is not configured. Drupal, by default, trying to send the user some email and after it fail, it show this message.
+
+If you Drupal is running on Ubuntu it is quite easy to install the mail service:
+
+sudo apt-get install php-pear
+sudo pear install mail
+sudo pear install Net_SMTP
+sudo pear install Auth_SASL
+sudo pear install mail_mime
+sudo apt-get install postfix
+

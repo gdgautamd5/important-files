@@ -1,0 +1,7 @@
+if want to import a .sql file u will have to change settings in php.ini because of max_upload_size
+
+instead if u have cmd line access u can do it directly;
+
+create a db in mysql first
+then 
+mysql>source /home/gautamdas/Questex/dev-mu.sql

@@ -1,0 +1,61 @@
+http://www.drupalgardens.com/documentation/
+http://www.drupalgardens.com/documentation/taxonomy/views
+
+https://drupal.org/node/111238		//vhost tutorial
+
+https://help.github.com/articles/set-up-git   				//github demo
+https://help.github.com/articles/generating-ssh-keys 		//keys generation
+ http://try.github.io  										//live git demo
+https://www.atlassian.com/git/tutorial/remote-repositories#!push   			//problem with push and git demo
+http://www.vogella.com/articles/Git/article.html
+
+
+https://www.codeschool.com		//learn various technologies
+
+http://www.maketecheasier.com/install-and-configure-apache-in-ubuntu/  			//install apache
+https://www.linode.com/wiki/index.php/Configure_apache_to_use_virtual_hosts_on_ubuntu_server
+http://httpd.apache.org/docs/2.2/vhosts/name-based.html
+http://httpd.apache.org/docs/2.2/vhosts/
+
+http://www.inmotionhosting.com/support/edu/drupal-7/views-module-tutorial/create-view
+http://bryanbraun.com/2013/08/06/drupal-tutorials-exposed-filters-with-views
+http://www.ostraining.com/blog/drupal/context-tutorial/
+http://mustardseedmedia.com/podcast     					//videos
+http://www.metaltoad.com/blog/using-drupal-contextual-filters-views
+http://www.TorontoWebsiteDeveloper.com
+http://www.siteground.com/tutorials/drupal 					//drupal tutorial
+http://www.anilsagar.com/content/drupal-7-tutorial-part-13-drupal-7-taxonomy-vocabulary-terms-tags-categories-concepts
+https://www.interworks.com/blogs/tmccullough/2013/02/26/getting-started-omega-and-drupal-7
+
+http://friendlymachine.net/posts/overview-drupal-taxonomy
+http://friendlymachine.net/learning-drupal
+
+http://webemania.com/blog						//drupal tutorial
+
+http://gitref.org/basic/						//basics about GIT
+http://www.i2ocr.com/   						//extract text from image
+http://themery.com/dgd7/theming/core    			//drupal theming
+https://drupal.org/node/171194					//theming
+http://www.wdtutorials.com/2011/06/13/drupal-7-how-create-custom-theme#.Uq7sfKqfq4M  //themeing
+
+http://malsup.com/jquery/cycle		// jQuery plugin
+https://drupal.org/node/294589		//ddblock tutorial
+
+https://drupal.org/documentation/structure		//structure guide for drupal
+
+https://drupal.org/developing/modules/7          //module development
+
+------------------------------------------------------------------------------------
+https://drupal.org/node/5590			//disable clean-url to see your website again(very imp if ur not able see ur website after enabling clean-url)
+
+
+http://nikro.me/articles/professional/drupal-field-collections
+
+http://befused.com/drupal/form-alter   //form alter
+
+https://drupal.org/node/1419390      //	create a simple module with form and menu link
+
+help.github.com/articles/error-permission-denied-publickey // git help(dont use sudo while cloning if u created ssh without sudo)
+
+http://tylerfrankenstein.com/code/drupal-send-e-mail-custom-module-code  //send mail code
+http://rakeshwebdev.wordpress.com/2013/02/21/send-email-with-drupal_mail-function/

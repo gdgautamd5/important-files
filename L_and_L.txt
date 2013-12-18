@@ -1,0 +1,10 @@
+learning and loyalty
+http://dev.tauniv.com
+uname-pahuja
+pwd-parul
+
+Modules
+domain
+delta
+context
+in vhost create a .conf file in sites-available

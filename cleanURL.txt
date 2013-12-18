@@ -1,0 +1,41 @@
+
+
+a2enmod rewrite
+service apache2 restart
+
+after you enable rewrite module, edit /etc/apache2/sites-enabled/000-default, and change
+
+        <Directory /var/www/>
+                Options Indexes FollowSymLinks MultiViews
+                AllowOverride none
+
+to
+
+        <Directory /var/www/>
+                Options Indexes FollowSymLinks MultiViews
+                AllowOverride all
+
+done.
+
+
+
+---------------------------------------------------
+
+
+---------------------------------------------------
+or For Ubuntu Server 13.04
+sudo a2enmod rewrite
+sudo vi /etc/apache2/sites-enabled/default
+
+If there is no such file, try this one: /etc/apache2/sites-enabled/000-default
+Change (line 7 and line 11), "AllowOverride None" to "AllowOverride All".
+Save and exit.
+
+Restart Apache
+sudo /etc/init.d/apache2 restart
+
+
+------------------------------------------------
+------------------------------------------------------------------------------------
+https://drupal.org/node/5590			//disable clean-url to see your website again(very imp if ur not able see ur website after enabling clean-url)
+ 

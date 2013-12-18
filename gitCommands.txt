@@ -64,3 +64,14 @@ Files can be changed back to how they were at the last commit by using the comma
 
 git checkout -- octocat.txt
 -------------------------------------------------------------------------------
+
+You clone a repository with git clone [url]. For example, if you want to clone the Ruby Git library called Grit, you can do so like this:
+
+$ git clone git://github.com/schacon/grit.git
+
+------------------------------------------------------------------------------
+dev-qa-prod
+cat .git/config
+drush fl
+drush fr featurename (to revert feature)
+git status -s(show hidden files as well)

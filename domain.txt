@@ -1,0 +1,9 @@
+
+this module is used to for one DB, multiple sites
+1)create a vhost of ur drupal site and serveralias
+2)in hosts file create a entry for both servername and serveralias
+3)restart apache
+4)before installing domain module,
+in settings.php add the end add this line-----> include DRUPAL_ROOT . '/sites/all/modules/domain/settings.inc'; 
+5)now add domain->add domain which is name given in server alias
+now when u add content u will get option in which domain u want to publish the content.

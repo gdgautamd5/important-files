@@ -1,0 +1,3 @@
+download jcrousel plugin(optional not remembering)
+download jcrousel module
+create view of fields format jcrausel and edit settings as required.

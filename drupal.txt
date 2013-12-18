@@ -1,0 +1,8 @@
+
+login from URL
+http://www.your-website-name.com/?q=user/login
+
+logout from URL
+http://www.your-website-name.com/user/logout
+
+(# importance)The admin/help#modulename case is used by Drupal core to link from the main help page (/admin/help or ?q=admin/help)

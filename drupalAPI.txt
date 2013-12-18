@@ -1,0 +1,68 @@
+DRUPAL_ROOT it is a constant of getpwd();
+define (DRUPAL_ROOT,getpwd());
+
+------------------------------------------------
+drupal_get_path
+DC common.inc 	drupal_get_path($type, $name)
+
+Returns the path to a system item (module, theme, etc.).
+Parameters
+
+$type: The type of the item (i.e. theme, theme_engine, module, profile).
+
+$name: The name of the item for which the path is requested.
+Return value
+
+The path to the requested item.
+-------------------------------------------------
+t():-Translates a string to the current language or to a given language.
+The t() function serves two purposes. First, at run-time it translates user-visible text into the appropriate language. Second, various mechanisms that figure out what text needs to be translated work off t() -- the text inside t() calls is added to the database of strings to be translated. These strings are expected to be in English, so the first argument should always be in English
+
+Translating Variables
+
+You should never use t() to translate variables, such as calling
+
+t($text); 
+
+, unless the text that the variable holds has been passed through t() elsewhere (e.g., $text is one of several translated literal strings in an array). It is especially important never to call
+
+t($user_text); 
+
+, where $user_text is some text that a user entered - doing that can lead to cross-site scripting and other security problems. However, you can use variable substitution in your string, to put variable text such as user names or link URLs into translated text. Variable substitution looks like this:
+
+$text = t("@name's blog", array('@name' => format_username($account)));
+
+Basically, you can put variables like @name into your string, and t() will substitute their sanitized values at translation time. (See the Localization API pages referenced above and the documentation of format_string() for details about how to define variables in your string.) Translators can then rearrange the string as necessary for the language (e.g., in Spanish, it might be "blog de @name").
+
+----------------------------------------------------------------------------------------
+(HOOKS)-
+
+Allow modules to interact with the Drupal core.
+
+Drupal's module system is based on the concept of "hooks". A hook is a PHP function that is named foo_bar(), where "foo" is the name of the module (whose filename is thus foo.module) and "bar" is the name of the hook. Each hook has a defined set of parameters and a specified result type.
+
+To extend Drupal, a module need simply implement a hook. When Drupal wishes to allow intervention from modules, it determines which modules implement a hook and calls that hook in all enabled modules that implement it.
+
+The available hooks to implement are explained here in the Hooks section of the developer documentation. The string "hook" is used as a placeholder for the module name in the hook definitions. For example, if the module file is called example.module, then hook_help() as implemented by that module would be defined as example_help().
+
+The example functions included are not part of the Drupal core, they are just models that you can modify. Only the hooks implemented within modules are executed when running Drupal.
+------------------------------------------------------------------------------------------------
+user_load();
+Loads a user object.
+
+<?php
+global $user;
+$user_fields = user_load($user->uid);
+
+$firstname = $user_fields->field_firstname['und']['0']['value'];
+$lastname = $user_fields->field_lastname['und']['0']['value'];
+
+print 
+t("Welcome: " . $firstname. ' ' . $lastname) ;
+?>
+----------------------------------------------------------------------------------------
+select value from autocomplete and query it
+$speaker = $form_state['values']['field_prefered_speaker']['und'][0]['uid'];
+  dsm($speaker);
+  $speaker_emailid = db_query("SELECT mail FROM {users} WHERE uid = :uid", array(':uid' => $speaker))->fetchField();
+  ------------------------------------------------------------

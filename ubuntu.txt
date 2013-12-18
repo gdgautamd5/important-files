@@ -1,0 +1,8 @@
+ 
+The -a flag is probably what you are looking for:
+
+cp -a /path/from /path/to
+
+The -a flag turns on recursive behaviour (which can also be done with the -R flag), and will also attempt to preserve metadata such as file ownership, permissions, timestamps, links, etc.
+
+You should only need to use sudo if you are copying to a location not owned by the current user, if the current user doesn't have read permissions for the files being copied, or if you want to preserve ownership on files not owned by the current user.

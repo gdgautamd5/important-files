@@ -1,0 +1,45 @@
+1)goto cd /etc/apache2/sites-available
+2)create sudo gedit websitename.com
+3)add this following dont add comments in that file 
+<VirtualHost *:80>
+	ServerAdmin webmaster@localhost
+	ServerName www.hello.com     //enter your website name
+	DocumentRoot /var/www/gdPHP //enter your folder name where all files are stored
+	<Directory />
+		Options FollowSymLinks
+		AllowOverride all
+	</Directory>
+	<Directory /var/www/gdPHP> //enter your folder name where all files are stored
+		Options Indexes FollowSymLinks MultiViews
+		AllowOverride None
+		Order allow,deny
+		allow from all
+	</Directory>
+
+	ScriptAlias /cgi-bin/ /usr/lib/cgi-bin/
+	<Directory "/usr/lib/cgi-bin">
+		AllowOverride None
+		Options +ExecCGI -MultiViews +SymLinksIfOwnerMatch
+		Order allow,deny
+		Allow from all
+	</Directory>
+
+	ErrorLog ${APACHE_LOG_DIR}/error.log
+
+	# Possible values include: debug, info, notice, warn, error, crit,
+	# alert, emerg.
+	LogLevel warn
+
+	CustomLog ${APACHE_LOG_DIR}/access.log combined
+</VirtualHost>
+4)come out of directory and goto /etc and there edit file hosts
+sudo gedit hosts
+enter 127.0.0.1  websitename
+save it
+5)save it and enter command sudo a2ensite
+6)it will ask to enter website name,enter that
+7)sudo service apache2 reload
+
+
+8)run url in your browser
+

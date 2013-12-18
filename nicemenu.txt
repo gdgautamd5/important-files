@@ -1,0 +1,7 @@
+install nice menu module
+once installed two nice menu
+nice menu1
+nice menu2
+this are availbale in blocks, assign them to particular region and while configuring nice menu decide which menu to be showed in this nice menu (e.g-main menu,user menu,navigation menu or user defined menu)
+
+https://drupal.org/node/15365

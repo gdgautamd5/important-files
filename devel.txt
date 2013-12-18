@@ -1,0 +1,8 @@
+ global $user;
+ $account = $user;
+ dpm($account);
+ it shows info abt current logged in user.
+
+ -------------------------------------------
+
+ 

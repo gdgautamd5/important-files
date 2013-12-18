@@ -1,0 +1,26 @@
+dont use closing php tag in hello.module
+dont change module file while it is enabled first disable the edit module file.
+
+create a folder in sites/all/modules
+name the folder as hello
+inside folder add two files
+
+
+1)hello.info
+name = hello
+description = Custom hello module
+core = 7.x
+
+
+
+
+
+2)hello.module
+<?php
+
+/**
+ * @file
+ * Custom functions for this site.
+ */
+
+

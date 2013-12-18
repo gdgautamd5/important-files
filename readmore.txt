@@ -1,0 +1,16 @@
+ Drupal Views - Add read more link to body
+Submitted by mudsurfer on Wed, 27/03/2013 - 11:33am
+
+I have no idea why I keep forgetting this in Druapl 7, but I do, and I have to look it up nearly every week - must be something subconscious going on there...  Anyway - I often need to manually truncate a views body field to a certain number of characters (say 200 chr) and then want to follow it with a "read more" link.  Often when i do this I cant remember how to create the link.  I often get confused and insert a field called "Content:ink", and then use the token from that field - but that one does not provide a link to content - it is a action to changefrom edit to view mode (it is like the"View" tab).
+
+What I really need is the "Content :Path" field.
+
+Insert the Content:path field in your view, high up near the top of field, and mark as exclude from display.
+
+Then in your body field - rewrite results, check rewrite the output, trim to max length (eg 200), trim on word boundary, Add an ellipsis, Add a read-morelink if output is trimmed:
+
+More link text
+"Read More"
+
+More link path
+[path]    (This is the token that is provided by Content:Path).

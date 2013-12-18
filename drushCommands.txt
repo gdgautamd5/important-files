@@ -1,0 +1,64 @@
+
+#if error comes as ~/.drush/cache/usage permissions problem
+
+Maybe you ran drush as root once to download the console table?
+solution:sudo chown -R gautamdas ~/.drush
+
+
+------------------------------------------------------------------------------------------
+
+
+
+
+install drupal using drush with creating mysql database no need to create db explicitly 
+drush si  --db-url=mysql://root:faichi123@localhost/drushDB
+
+
+------------------------------------------------------------------------------------------------
+
+drush dl cck zen
+    Download current recommended versions of CCK module and Zen theme.
+drush en content
+    Enable the content (cck) module.
+drush vset theme_default theme_name
+    make theme_name theme default theme
+drush --uri=http://example.com status
+    Show status command for the example.com multi-site.
+drush pm-releases backup_migrate
+    Get info on all available releases for backup_migrate.module, e.g.
+    Project         Release      Date       
+    backup_migrate  6.x-2.x-dev  2009-Apr-07
+    backup_migrate  6.x-1.2      2009-Jan-18
+    backup_migrate  6.x-1.0      2008-Aug-14
+    backup_migrate  6.x-1.x-dev  2009-Feb-19 
+drush -v  dl backup_migrate-6.x-1 --package-handler=git_drupalorg
+    Checkout via git, the current stable version of the backup_migrate module on the DRUPAL-6--1 branch into your sites/{active.site}/modules/ directory. In this case the result is identical with just drush dl backup_migrate --package-handler=git_drupalorg as the requested version is the recommended version.
+drush -v  dl backup_migrate-6.x-2.x-dev --package-handler=git_drupalorg
+    Checkout via git, the unstable dev version of the backup_migrate module on the DRUPAL-6--2 branch into your sites/{active.site}/modules/ directory.
+drush -v  dl backup_migrate-6.x-2.x-dev
+    Without specifying a --package-handler, (the default) the project bundle is retrieved via wget, and unpacked locally without the git information. This may overwrite any local changes.
+drush pm-update devel
+    Update the devel module to the latest recommended release and apply any database updates
+drush pm-update drupal
+    To update only Drupal core (in case of a security update) 
+
+
+------------------------------------------------------------------------------------
+
+
+drush status
+drush dl modulename/theme
+drush en modulename/theme
+drush pm-list --type=Module                         //list all modules
+drush pm-list --type=Module --status=enabled        //list all enabled modules
+
+drush vset maintenance_mode 0           //to set active the website
+drush vset maintenance_mode 1           //to set in-active the website
+
+
+-------------------------------------------------------------------------------------
+
+drush vset clean_url 1 --yes (enable clean url, 0 for disable)
+
+
+---------------------------------------------------
