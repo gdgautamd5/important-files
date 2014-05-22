@@ -75,3 +75,51 @@ cat .git/config
 drush fl
 drush fr featurename (to revert feature)
 git status -s(show hidden files as well)
+
+--------------------------------------------------------
+pull data from remote
+ git fetch consoft 
+ git merge consoft/master  
+
+
+ -----------------------------------------------------
+ ERROR:Your local changes to the following files would be overwritten by checkout:
+	sites/all/modules/consoft/consoft_tools/consoft_tools.form.inc
+	sites/all/themes/naxxas/css/global.css
+Please, commit your changes or stash them before you can switch branches.
+Aborting
+
+ to ignoring changes in branch and move to another branch 
+ git reset --hard(now u can switch to other branch)
+
+ --------------------------------------------------------------------
+ to see hidden branches use 
+ git branch -a
+ --------------------------------------------------------------------
+ To delete a local branch
+
+git branch -d the_local_branch
+To remove a remote branch (if you know what you are doing!)
+
+git push origin :the_remote_branch
+
+--------------------------------------------------------------------------
+error: Your local changes to the following files would be overwritten by checkout:
+	sites/all/modules/consoft/consoft_tools/consoft_tools.module
+Please, commit your changes or stash them before you can switch branches.
+Aborting
+*****use
+gautamdas@gautamdas:/var/www/drupal-site-consoft-naxxas$ git checkout .
+and then checkout
+
+---------------------------------------------------------------------------
+https://help.github.com/articles/resolving-a-merge-conflict-from-the-command-line
+to remove all conflicts change files and do
+git commit -am "your message"
+then perform git pull
+________________________________________________________________________
+If you want to rename the remote branch, you can simply do:
+git branch -m <oldname> <newname>(not tried)
+
+If you want to rename the current branch, you can simply do:
+git branch -m <newname>(tried)

@@ -1,127 +1,18 @@
-			-Views-
-		 A Smart Query Builder
-
-- The views module allows administrators and site designers to 
-   create, manage, and display lists of content.
-
--  Each list managed by the views module is known as a "view", 
-    and the output of a view is known as a "display".
+http://www.enterana.com/blog/web-development/adding-custom-links-drupal-views     //add custom link in views
+http://knackforge.com/blog/sivaji/how-alter-views-field-output-programmatically   //coding in views
 
 
-- A view may be restricted to members of specific user roles, and 
-   may be added, edited or deleted at the views administration
-   page.
-
-- The Views Module provides the dynamo in a dynamic web site.  
-   It makes your work easier and more powerful in building the 
-   site and especially in maintaining it.
-
-
-- The "building block" design of the views system provides power 
-   and flexibility, allowing parameters to be specified only when 
-   needed. While an advanced view may use all of available 
-   parameters to create complex and highly interactive 
-   applications, a simple content listing may specify only a few 
-   options.
-
-
-
-
-
-	-Downloading and Enabling Views-
-
-1. Download and uncompress the files and put them in your 
-     contributed modules directory. In most systems, this is at 
-     sites/all/modules/contrib or simply sites/all/modules so that 
-     you can find all of the Views files in 
-     sites/all/modules/contrib/views or sites/all/modules/views.
-2. On your web site, make sure you are logged in as a user with 
-     permission to administer modules or as a user with the  
-     Administrator role. Use the administrative menu at the top and 
-     click Modules.
-3.  Scroll down to the Views fieldset. CTools is a required module 
-      for Views to work. Download and install CTools. 
-4. Since all required files are available, you may now enable 
-     Views. Check the checkboxes for Views and Views UI, then 
-     Save configuration.
-
-
-
-
-
-
-		-Configuring Views-
-
-1. Go to the Administrative menu at the top and click People. 
-    Click the Permissions tab. There are two permissions for the 
-    Views module, “Administer views” and “Access all views”.
-2. “Administer views” grants access to the Views administration 
-     pages allowing users the ability to create, edit and delete 
-     Views.
-3. “Bypass views access control” is another permission that 
-     should be used sparingly. For a specific View, you can specify 
-     which roles can see the results. 
-4. Selecting the “Access all views” permission for a role will 
-     override that setting.
-5. Using the Administration menu, click Structure and then on 
-     that page, click Views. This is the Views list page where all 
-     Views in your web site are listed.
-
-
-
-
-
-
-	   -Some Important Terms In Views-
-
-Fields - individual pieces of data being displayed
-
-Relationships - information about how data elements relate to 
-                one another.
-Arguments - additional parameters that dynamically refine the 
-            view results, passed as part of the path.
-Sort criteria - which determine the order of items displayed in 
-                the view results.
-Filters - which limit items displayed in the results.
-
-Displays - which control where the output will be seen.
-
-Header/Footer - which allow you to add by default one or more 
-                text area above/below the views output.
-
-
-		-Displays-
-
- A display determines how a view will be presented to the user. A view can have multiple
- displays, and can even create several pages listing the same content in different ways.
- There are by default 4 types of displays:
-
-1. Attachment- A supplementary display that can be attached above and/or below other types of 
-   displays. This can be helpful when giving a view context or adding a glossary when
-   your view is being filtered.
-
-2. Block- Creates a compact list display that can be positioned in sidebars or any region.
-
-3. Feed- Creates a customizable RSS feed to which users may subscribe using an RSS reader.
-   Feeds can both receive their own URL and be attached to any block or page display.
-
-4. Page- Makes a page with its own URL in which the view occupies the main content.
-
-
-             -Multiple Views vs Multiple Displays-
-
-1. Multiple displays in one view is appropriate when they are fundamentally similar and are sharing quite a fair amount of data.
-   For example, showing upcoming events in either blocks or page and sorting it according to either event name or date of the event
-   will be appropriate to be implemented by four displays (two blocks and two pages) in one view.
-
-2. On the other hand, having multiple displays in one view that contains mostly overrides will be a burden to the system and will be hard
-   to maintain. The effect of having only couple of such displays has negligible performance difference. It will be magnified when
-   the number of displays in one view is large.
-
-2. Another consideration is the use of Views, especially when using multiple views in conjunction with other modules such as Panels.
-   It is entirely possible to have many views on a page due to Panels' ability to contain a view in each pane. Some people have 
-   mistaken this as a problem on Panels' or Views' part, but realistically it is likely to be the sheer number of queries that are
-   being run during page render. 
-
-
-
+-----------------------------------------------------------------
+to see view fields use dsm and modify that using item_node variable
+function video_conference_views_pre_render(&$view){
+dsm($view); 
+  if(( "make_conference_page" == $view->name) && ( "ongoing_conferences" == $view->current_display || $view->current_display == "future_conferences") ){
+    foreach($view->result as $item_node){
+      dsm($item_node);
+      //unset($item_node->field_field_introduction_video[0]['rendered']['#markup']);
+      //$item_node->field_field_introduction_video[0]['rendered']['#markup'] = simple_modal_page($item_node->nid);
+      $item_node->field_field_subject[0]['rendered']['#markup'] = 'abc';
+      
+    }
+  }
+}

@@ -1,4 +1,6 @@
 
+https://groups.drupal.org/drush/commands
+--------------------------------------------------------------------
 #if error comes as ~/.drush/cache/usage permissions problem
 
 Maybe you ran drush as root once to download the console table?
@@ -10,7 +12,7 @@ solution:sudo chown -R gautamdas ~/.drush
 
 
 
-install drupal using drush with creating mysql database no need to create db explicitly 
+install drupal using drush with creating mysql database no need to create db explicitly
 drush si  --db-url=mysql://root:faichi123@localhost/drushDB
 
 
@@ -26,11 +28,11 @@ drush --uri=http://example.com status
     Show status command for the example.com multi-site.
 drush pm-releases backup_migrate
     Get info on all available releases for backup_migrate.module, e.g.
-    Project         Release      Date       
+    Project         Release      Date
     backup_migrate  6.x-2.x-dev  2009-Apr-07
     backup_migrate  6.x-1.2      2009-Jan-18
     backup_migrate  6.x-1.0      2008-Aug-14
-    backup_migrate  6.x-1.x-dev  2009-Feb-19 
+    backup_migrate  6.x-1.x-dev  2009-Feb-19
 drush -v  dl backup_migrate-6.x-1 --package-handler=git_drupalorg
     Checkout via git, the current stable version of the backup_migrate module on the DRUPAL-6--1 branch into your sites/{active.site}/modules/ directory. In this case the result is identical with just drush dl backup_migrate --package-handler=git_drupalorg as the requested version is the recommended version.
 drush -v  dl backup_migrate-6.x-2.x-dev --package-handler=git_drupalorg
@@ -40,7 +42,7 @@ drush -v  dl backup_migrate-6.x-2.x-dev
 drush pm-update devel
     Update the devel module to the latest recommended release and apply any database updates
 drush pm-update drupal
-    To update only Drupal core (in case of a security update) 
+    To update only Drupal core (in case of a security update)
 
 
 ------------------------------------------------------------------------------------
@@ -62,3 +64,6 @@ drush vset clean_url 1 --yes (enable clean url, 0 for disable)
 
 
 ---------------------------------------------------
+
+drush sqlc(opens mysql for particular drupal installation)
+e.g: goto to ur project folder and type drush sqlc, it will open DB of that particular drupal installation

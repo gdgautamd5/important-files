@@ -59,3 +59,14 @@ help.github.com/articles/error-permission-denied-publickey // git help(dont use 
 
 http://tylerfrankenstein.com/code/drupal-send-e-mail-custom-module-code  //send mail code
 http://rakeshwebdev.wordpress.com/2013/02/21/send-email-with-drupal_mail-function/
+
+------------------------------------------------------------------------------
+http://websmiths.co/category/tags/drupal-7     //demo
+
+https://drupal.org/node/854216    //custom autocomplete
+
+http://timonweb.com/how-programmatically-create-nodes-comments-and-taxonomies-drupal-7   //create node,taxonomy programatically
+
+
+--------------------------------------------------------------------
+http://www.wdtutorials.com/tags/drupal-7?page=1    //video tutorial
